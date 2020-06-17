@@ -43,7 +43,7 @@
 				
 				<!--Login Modal in Nav-->
 				<span class="navbar-text">
-					<a data-toggle="modal" data-target="#loginModal">
+					<a id="loginModalToggle">
 						<span class="fa fa-sign-in"></span> 
 						LogIn
 					</a>
@@ -108,7 +108,7 @@
 				<!--Reserve Table block button with tooltip-->
 				<div class="col-12 col-sm align-self-center">
 					<!--modal reserve-->
-					<a class="btn btn-warning nav-link btn-block" href="#reserve" role="button" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+					<a class="btn btn-warning nav-link btn-block" href="#reserve" role="button" id="reserveModalToggle">Reserve Table</a>
 				</div>
             </div>
         </div>
@@ -355,8 +355,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	
-	<!--pause play carousel-->
 	<script>
 		$(document).ready(function(){
 			$('#mycarousel').carousel({interval:2000});
@@ -375,8 +373,15 @@
 						$('#carouselButton').children('span').addClass('fa-pause');
 					}
 			});
-			
-		});
+
+			$("#loginModalToggle").click(function(){
+				$("#loginModal").modal('toggle');
+			});
+
+			$("#reserveModalToggle").click(function(){
+				$("#reserveModal").modal('toggle');
+			});
+	});
 	</script>
 </body>
 
